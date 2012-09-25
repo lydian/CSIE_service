@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.iWebsiteTemplate.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+    <div class="logo"><h1><a href="<?=base_url();?>"><span>CSIE</span>INFO<small>National Taiwan University</small></a></h1></div>
+    <div class="menu_nav">
+      <ul>
+        <li><a href="http://info.csie.ntu.edu.tw/student/">Students</a></li>
+        <li><a href="http://info.csie.ntu.edu.tw/faculty/">Faculty</a></li>
+        <li><a href="http://info.csie.ntu.edu.tw/staff/">Staff</a></li>
+      </ul>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+
+  <div class="hbg">&nbsp;</div>
+
+  <div id="content" class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article" style="text-align:left;">
+        <%= yield %>
+        </div>
+      </div>
+      <div class="sidebar">
+        <h2>MENU</h2>
+        <ul>
+          <li> <%=link_to 'Students', students_path %> </li>
+          <li> <%=link_to 'Courses', courses_path %> </li>
+          <li> <%=link_to 'Assignments', assignments_path %> </li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© Copyright <a href="http://www.csie.ntu.edu.tw">CSIE</a>. Layout by [i] <a href="http://www.iwebsitetemplate.com/">Website Templates</a></p>
+      <ul class="fmenu">
+        <li><a href="http://www.ntu.edu.tw">NTU 臺灣大學</a></li>
+        <li><a href="http://www.csie.ntu.edu.tw">CSIE 資訊工程學系</a></li>
+        <li><a href="http://www.inm.ntu.edu.tw">INM 資訊網路與多媒體研究所</a></li>
+        <li><script type="text/javascript">
+        <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;to=217ta@csie.ntu.edu.tw" title="[GMCP] Compose a new mail to Contact" target="_blank" rel="noreferrer">Contact</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

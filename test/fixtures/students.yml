@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  name: Lydian Lee
+  account: lydian
+
+two:
+  id: 2
+  name: Brian 
+  account: brian
+
+three:
+  id: 3
+  name: 李庭嫣
+  account: r97944018
+
+four:
+  id: 4
+  name: Gerry
+  account: r93922001
+
+five:
+  id: 5
+  name: Ted
+  account: b93021

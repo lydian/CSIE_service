@@ -1,0 +1,19 @@
+<h1><%= "#{@course.year} - #{@course.semester}" %></h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <% @calendar.each do |c| %>
+      <td><%= c.date.strftime("%Y-%M-%d") %></td>
+    <% end %>
+  </tr>
+  <% @assignments.each do |s| %>
+    <tr>
+      <td><%= s.name %></td>
+      <% @calendar.each do |c| %>
+        <td><input value='<%=records[a.id][c.id] %>'></td>
+      <% end %>
+
+    </tr>
+  <% end %>
+</table>

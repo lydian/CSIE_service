@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  assignment_id: 1
+  time: 2012-09-23 18:02:35
+  status: MyString
+
+two:
+  assignment_id: 1
+  time: 2012-09-23 18:02:35
+  status: MyString

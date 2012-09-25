@@ -1,0 +1,8 @@
+<h1>Show Student Assignment</h1>
+
+<% @assignments.each do |course| %>
+  <h2><%= course[0].year %> - <%= course[0].semester %> </h2> 
+  <% course[1].each do |student| %>
+    <li><%= student.name %></li>
+  <%end%>
+<% end %>

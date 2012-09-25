@@ -1,0 +1,2 @@
+module AttendenceHelper
+end

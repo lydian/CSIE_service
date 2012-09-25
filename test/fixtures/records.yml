@@ -1,0 +1,36 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+attend:
+  assignment_id: 1
+  calendar_id: 1
+  status: attend
+
+absent:
+  assignment_id: 1
+  calendar_id: 2
+  status: absent
+
+attend2:
+  assignment_id: 1
+  calendar_id: 3
+  status: attend
+
+attend3:
+  assignment_id: 1
+  calendar_id: 4
+  status: attend
+
+attend4:
+  assignment_id: 2
+  calendar_id: 1
+  status: attend
+
+attend5:
+  assignment_id: 2
+  calendar_id: 2
+  status: attend
+
+attend6:
+  assignment_id: 2
+  calendar_id: 3
+  status: attend

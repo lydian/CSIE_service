@@ -1,0 +1,117 @@
+/* warning */
+.warning{
+    background-color:#FFB6C1;
+    border:1px solid #B03060;
+    width:90%;
+    text-align:left;
+    color:black;
+    padding:0 10px;
+    font-size:normal;
+    margin:10px;
+}
+.error{
+    text-align:left;
+    color:red;
+    padding:0 10px;
+    font-size:normal;
+    margin:10px;
+}
+/* info */
+/* info */
+.info{
+    background-color:#E5FFCD;
+    border:1px solid #A8FF55;
+    width:90%;
+    text-align:left;
+    color:black;
+    padding:0 10px;
+    font-size:normal;
+    margin:10px;
+}
+/* icon */
+.icon{
+    border: 0 solid #fff !important;
+    width: 16px;
+    vertical-align: middle;
+    padding:0px;
+}
+table,td,th {
+    border-collapse:collapse;
+    margin:0;
+    padding:0;
+
+}
+table {
+    border: none;
+    font-family: Garamond, Georgia, "Times New Roman", Times, serif;
+}
+
+table caption {
+    background-color: transparent;
+    background-image: url(http://blog.slaven.net.au/wp-content/csstables/cap_bg.gif);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    text-align:left;
+    font-size:150%;
+    text-transform:uppercase;
+    line-height: 30px;
+    letter-spacing:0px; 
+}
+
+td, th{ 
+    vertical-align:top;
+    font-weight:normal; 
+}
+
+thead {
+    border-left:1px solid #2293FF;  
+}
+
+th, thead th {
+    background: #2293FF;
+    color: #FFFFFF;
+    font-size: 125%;
+    border:1px solid #2293FF;
+    padding: 4px 0.4em 4px 0.4em;   
+}
+
+tfoot td, tfoot th {
+    border-top:1px solid #2293FF;
+    border-right: none;
+    font-weight: bolder;
+    font-size: 110%;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+}
+
+td{
+    /*background-color: #D9ECFF;*/
+    border:1px solid #2293FF;
+    font-size: 110%;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+}
+tr:nth-child(even){
+    background-color: #FFFFFF;
+}
+tr:nth-child(even){
+    background-color: #BDDFFF;
+}
+tbody tr.odd th, tbody tr.odd td{
+    background-color: #BDDFFF;
+}
+
+tbody th{   
+    font-weight: bold;  
+    border-left:1px solid #2293FF
+}
+
+table a:link, table a:visited, table a:active { 
+    color:#444F66;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+table a:hover {
+    text-decoration:none;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+}

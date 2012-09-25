@@ -1,0 +1,18 @@
+<h1>Listing students</h1>
+
+<table>
+  <% @students.each do |student| %>
+  <%= content_tag_for(:tr, student) do %>
+    <td><%= student.name %></td>
+    <td><%= student.account %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Remove', student, method: :delete , remote: true%></td>
+  </tr>
+<%end%>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Student', new_student_path %>

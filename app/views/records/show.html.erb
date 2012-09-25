@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Assignment:</b>
+  <%= @record.assignment_id %>
+</p>
+
+<p>
+  <b>Calendar:</b>
+  <%= @record.calendar_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @record.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
