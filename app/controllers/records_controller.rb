@@ -7,6 +7,7 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @records }
+      format.xml { render xml: @records }
     end
   end
 
@@ -18,6 +19,7 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @record }
+      format.xml { render xml: @record }
     end
   end
 
@@ -29,6 +31,8 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @record }
+      format.xml { render xml: @record }
+      format.js
     end
   end
 
@@ -46,9 +50,11 @@ class RecordsController < ApplicationController
       if @record.save
         format.html { redirect_to @record, notice: 'Record was successfully created.' }
         format.json { render json: @record, status: :created, location: @record }
+        format.xml { render xml: @record, status: :created, location: @record }
       else
         format.html { render action: "new" }
         format.json { render json: @record.errors, status: :unprocessable_entity }
+        format.xml { render xml: @record.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +68,13 @@ class RecordsController < ApplicationController
       if @record.update_attributes(params[:record])
         format.html { redirect_to @record, notice: 'Record was successfully updated.' }
         format.json { head :no_content }
+        format.xml { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @record.errors, status: :unprocessable_entity }
+        format.xml { render xml: @record.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -78,6 +88,7 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to records_url }
       format.json { head :no_content }
+      format.xml { head :no_content }
     end
   end
 end

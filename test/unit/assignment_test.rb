@@ -20,15 +20,15 @@ class AssignmentTest < ActiveSupport::TestCase
     assert_equal "absent", @p.records.last.status , "wrong status"
   end
 
-  test "if student absent in one class, he has to makeup 2 classes" do
-    @p.add_record(@c, "absent")
-    assert_equal 2, @p.required_makeup , "after adding an absent record, the required makeup class should be 2" 
-  end
+  #test "if student absent in one class, he has to makeup 2 classes" do
+  #  @p.add_record(@c, "absent")
+  #  assert_equal 2, @p.required_makeup , "after adding an absent record, the required makeup class should be 2" 
+  #end
 
-  test "if student ask for leaving one class, he has to makeup 1 class" do
-    @p.add_record(@c , "leave")
-    assert_equal 1, @p.required_makeup 
-  end
+  #test "if student ask for leaving one class, he has to makeup 1 class" do
+  #  @p.add_record(@c , "leave")
+  #  assert_equal 1, @p.required_makeup 
+  #end
 
   test "student can appointment the future date for makeup course" do
     assert @p.add_appointment(@tomorrow )

@@ -79,6 +79,8 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       format.js
+      format.json { head :success}
+      format.html { redirect_to @student, notice: 'Student was successfully deleted.' }
     end
   end
 end

@@ -43,7 +43,7 @@ class StudentsControllerTest < ActionController::TestCase
     assert_difference('Student.count', -1) do
       delete :destroy, id: @student
     end
-
     assert_redirected_to students_path
+
   end
 end

@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
-  attr_accessible :assignment, :status, :time
+  attr_accessible :assignment_id, :assignment, :status, :time
   belongs_to :assignment
   validates :time , :presence => true
   validates :assignment , :presence => true

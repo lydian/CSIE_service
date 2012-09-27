@@ -1,21 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   course_id: 1
   date: 2012-09-23 18:09:43
 
 two:
+  id: 2
   course_id: 1
   date: 2012-09-30 18:09:43
 
 three:
+  id: 3
   course_id: 1
   date: 2012-10-07 18:09:43
 
 four:
+  id: 4
   course_id: 1
   date: 2012-10-14 18:09:43
 
 five:
+  id: 5
   course_id: 1
   date: 2012-10-21 18:09:43

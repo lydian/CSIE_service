@@ -7,14 +7,22 @@ class AttendenceController < ApplicationController
   def show
     @course = Course.find(params[:id]) 
     @calendar = Calendar.where(:course_id => @course.id)
-    @assignments = Assignment.find_by_sql("SELECT * FROM assignments LEFT JOIN students ON students.id = assignments.student_id WHERE course_id=#{@course.id}")
+    @assignments = @course.assignments
     @records = {}
     @assignments.each do |a|
-      @records[a.id] = {}
+      @records[a.student.id] = {}
       @calendar.each do |c|
-        @records[a.id][c.id] = Record.where("assignment_id= ? AND calendar_id=?" , a.id, c.id)
+        @records[a.student.id][c.id] = @course.find_record(a, c)
+        #@records[s.id][c.id] = "#{s.id}-#{c.id}"
       end
     end
+    #@records = {}
+    #@students.each do |student|
+     # @records[student.id] = {}
+      #@calendar.each do |c|
+       # @records[student.id][c.id] = Record.where("course_id = ? AND student_id = ? AND calendar_id=?" , @course.id, @student.id, c.id)
+      #end
+    #end
   end
 
 

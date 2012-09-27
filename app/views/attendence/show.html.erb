@@ -1,5 +1,5 @@
 <h1><%= "#{@course.year} - #{@course.semester}" %></h1>
-
+<div class='info'>a</div>
 <table>
   <tr>
     <td>Name</td>
@@ -7,13 +7,18 @@
       <td><%= c.date.strftime("%Y-%M-%d") %></td>
     <% end %>
   </tr>
-  <% @assignments.each do |s| %>
+  <% @assignments.each do |a| %>
     <tr>
-      <td><%= s.name %></td>
+      <td><%= a.student.name %></td>
       <% @calendar.each do |c| %>
-        <td><input value='<%=records[a.id][c.id] %>'></td>
+        <td>
+          <% @record = @records[a.student.id][c.id] %>
+          <%= form_for(@record, :namespace => [a.student.id, c.id], :remote=>true) do |f| %>
+            <%= f.text_field :status , :size=>10, :value=>@record.status  %>
+            <%= f.submit  :id=>"#{a.student.id}_#{c.id}_submit" %>
+          <% end %>
+        </td>
       <% end %>
-
     </tr>
   <% end %>
 </table>
