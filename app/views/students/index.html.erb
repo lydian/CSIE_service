@@ -3,11 +3,9 @@
 <table>
   <% @students.each do |student| %>
   <%= content_tag_for(:tr, student) do %>
-    <td><%= student.name %></td>
-    <td><%= student.account %></td>
-    <td><%= link_to 'Show', student %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Remove', student, method: :delete , remote: true%></td>
+      <td><%= link_to "#{student.name}(#{student.account})", student %></td>
+    <td><%= button_to 'Edit', edit_student_path(student) %></td>
+    <td><%= button_to 'Remove', student, method: :delete , remote: true%></td>
   </tr>
 <%end%>
 <% end %>
@@ -15,4 +13,4 @@
 
 <br />
 
-<%= link_to 'New Student', new_student_path %>
+<%= button_to 'New Student', new_student_path %>

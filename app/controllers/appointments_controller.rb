@@ -1,8 +1,15 @@
 class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
+
+  before_filter :get_assignment
+
+  def get_assignment 
+    @assignment = Assignment.find(params[:assignment_id])
+  end
+
   def index
-    @appointments = Appointment.all
+    @appointments = @assignment.appointments
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +32,9 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new.json
   def new
     @appointment = Appointment.new
+    @appointment.assignment = @assignment
+    @appointment.status = 'request'
+    @appointment.save
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,12 +50,12 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(params[:appointment])
+    @appointment = @assignment.appointments.new(params[:appointment])
 
     respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render json: @appointment, status: :created, location: @appointment }
+        format.html { redirect_to [@assignment, @appointment], notice: 'Appointment was successfully created.' }
+        format.json { render json: [@assignment, @appointment], status: :created, location: [@assignment, @appointment] }
       else
         format.html { render action: "new" }
         format.json { render json: @appointment.errors, status: :unprocessable_entity }
@@ -60,7 +70,7 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.update_attributes(params[:appointment])
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
+        format.html { redirect_to [@assignment, @appointment], notice: 'Appointment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +86,7 @@ class AppointmentsController < ApplicationController
     @appointment.destroy
 
     respond_to do |format|
-      format.html { redirect_to appointments_url }
+      format.html { redirect_to assignment_appointments_url }
       format.json { head :no_content }
     end
   end

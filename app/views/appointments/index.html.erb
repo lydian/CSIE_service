@@ -1,8 +1,9 @@
 <h1>Listing appointments</h1>
 
+<h2>Course: <%="#{@assignment.course.year}-#{@assignment.course.semester}"%> </h2>
 <table>
   <tr>
-    <th>Assignment</th>
+    <th>Student</th>
     <th>Time</th>
     <th>Status</th>
     <th></th>
@@ -12,11 +13,11 @@
 
 <% @appointments.each do |appointment| %>
   <tr>
-    <td><%= appointment.assignment_id %></td>
+    <td><%= appointment.assignment.student.name %></td>
     <td><%= appointment.time %></td>
     <td><%= appointment.status %></td>
     <td><%= link_to 'Show', appointment %></td>
-    <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+    <td><%= link_to 'Edit', edit_assignment_appointment_path(@assignment, appointment) %></td>
     <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -24,4 +25,4 @@
 
 <br />
 
-<%= link_to 'New Appointment', new_appointment_path %>
+<%= link_to 'New Appointment', new_assignment_appointment_path %>

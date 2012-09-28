@@ -40,7 +40,6 @@ class AssignmentTest < ActiveSupport::TestCase
     n = @p.todo
     @p.add_appointment(@tomorrow)
     a = @p.appointments 
-    print a.to_json
     @p.appointments.last.update_status('finish')
     assert_equal n-1, @p.todo 
   end

@@ -3,11 +3,12 @@ Service::Application.routes.draw do
 
   resources :students
 
-  resources :appointments
 
   resources :records
   
-  resources :assignments
+  resources :assignments do
+     resources :appointments
+  end
   
   resources :attendence
   

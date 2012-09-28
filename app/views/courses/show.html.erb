@@ -10,6 +10,16 @@
   <%= @course.semester %>
 </p>
 
+<p>
+<b>Students:</b>
+<ul>
+    <% @course.students.each do |s|  %>
+    <li><%= s.name%> </li>   
+<%end %>
+</ul>
+</p>
+
+
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

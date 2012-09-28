@@ -10,6 +10,23 @@
   <%= @student.account %>
 </p>
 
-
+<% @student.assignments.each do |a| %> 
+<p>
+    <h3><%= "#{a.course.year}-#{a.course.semester}" %></h3>
+    <h4>Attendence</h4>
+    <ul>
+        <% a.records.each do |r| %>
+            <li><%="#{r.calendar.date}: #{r.status}" %></li>
+        <%end %>
+    </ul>
+    <h4>Appointment</h4>
+    <%= link_to 'Add Appointment', new_assignment_appointment_path(a) %>
+    <ul>
+        <% a.appointments.each do |p| %>
+            <li><%="#{p.time}:   #{p.status}"%></li>
+        <%end%>
+    </ul>
+</p>
+<% end %>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
